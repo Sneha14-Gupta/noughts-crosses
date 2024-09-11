@@ -23,14 +23,7 @@ main {
   min-width: 100vw;
   background: white;
   @extend %center;
-  background: radial-gradient(
-    328px at 2.9% 15%,
-    rgb(191, 224, 251) 0%,
-    rgb(232, 233, 251) 25.8%,
-    rgb(252, 239, 250) 50.8%,
-    rgb(234, 251, 251) 77.6%,
-    rgb(240, 251, 244) 100.7%
-  );
+  background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
 }
 .heading {
   font-weight: 400;
@@ -58,10 +51,10 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid whitesmoke;
-
   border-radius: 50px;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding:0px
 }
 .box {
   width: 100%;
@@ -70,9 +63,10 @@ main {
   @extend %center;
   cursor: pointer;
   border: 1px solid whitesmoke;
+
 }
-.box:nth-child(2n){
-    border: 1px solid whitesmoke;
+.box:nth-child(2n) {
+  border: 1px solid whitesmoke;
 }
 .reset-button {
   padding: 0.5rem 3rem;
