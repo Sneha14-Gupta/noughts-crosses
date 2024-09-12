@@ -11,6 +11,7 @@
 }
 body {
   font-family: v.$font;
+  background-color: #548687;
 }
 
 button,
@@ -21,7 +22,7 @@ input {
 main {
   min-height: 100vh;
   min-width: 100vw;
-  background: white;
+  // background: white;
   @extend %center;
   background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
 }
@@ -44,14 +45,17 @@ main {
   color: red;
 }
 .player_status{
-  border: 1px solid black;
+  border: 2px solid black;
   background-color: whitesmoke;
   border-radius: 1rem;
   padding:0.5rem 3rem;
+  font-size: 20px;
 }
 .current_player{
   color: red;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 1px;
 }
 // grid
 .game {
@@ -60,11 +64,12 @@ main {
   aspect-ratio: 1/1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid whitesmoke;
+  border: 3px solid whitesmoke;
   border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  padding:0px
+  background: #e2d2e1;
+  box-shadow: 10px 10px 50px #bebebe, -20px -20px 60px #ffffff;
+  padding:30px;
+
 }
 .box {
   width: 100%;
@@ -72,7 +77,8 @@ main {
   font-size: 2rem;
   @extend %center;
   cursor: pointer;
-  border: 1px solid whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
 
 }
 .box:nth-child(2n) {
@@ -81,6 +87,12 @@ main {
 .reset-button {
   padding: 0.5rem 3rem;
   border-radius: 1rem;
-  border: 1px solid whitesmoke;
+  border: 2px solid whitesmoke;
   cursor: pointer;
+
+  &:hover{
+    background-color: #e2d2e1;
+    
+  }
+
 }

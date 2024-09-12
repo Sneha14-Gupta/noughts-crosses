@@ -24,11 +24,21 @@ const swapPlayer=()=>{
 swapPlayer();
 console.log(currentPlayer);
 
-function handleClick(i){
-    i.textContent=currentPlayer;
+function handleClick(el){
+    el.textContent=currentPlayer;
     swapPlayer();
     
 }
-for(let i=0;i<boxes.length;i++){
-    boxes[i].addEventListener("click",handleClick(i));
-}
+// for(let i=0;i<boxes.length;i++){
+//     boxes[i].addEventListener("click",handleClick(i));
+// }
+boxes.forEach(el => {
+    boxes[el].addEventListener("click",handleClick(el));
+    // if(currentPlayer===""){
+    //     console.log();
+        
+
+    // }
+
+    
+});
