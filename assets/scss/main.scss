@@ -43,6 +43,16 @@ main {
   right: -2rem;
   color: red;
 }
+.player_status{
+  border: 1px solid black;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  padding:0.5rem 3rem;
+}
+.current_player{
+  color: red;
+  font-weight: 400;
+}
 // grid
 .game {
   width: 100%;
