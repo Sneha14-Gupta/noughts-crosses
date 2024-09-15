@@ -2,7 +2,6 @@
   "name": "noughts-crosses",
   "version": "1.0.0",
   "description": "classic tic-tac-toe game",
-  "main": "script.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
