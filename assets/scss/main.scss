@@ -1,106 +1,282 @@
+// @use "variables" as v;
+// @import "utils";
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+// // mixins
+// %center {
+//   display: grid;
+//   place-items: center;
+// }
+// body {
+//   font-family: v.$font;
+//   // background-color: #548687;
+// }
+
+// button,
+// input {
+//   font-family: inherit;
+//   outline: none;
+// }
+// // Main
+// main {
+//   min-height: 100vh;
+//   min-width: 100vw;
+//   // background: white;
+//   @extend %center;
+//   background: linear-gradient(
+//     68.6deg,
+//     rgb(252, 165, 241) 1.8%,
+//     rgb(181, 255, 255) 100.5%
+//   );
+// }
+// .heading {
+//   font-weight: 400;
+//   text-transform: uppercase;
+//   letter-spacing: 2px;
+//   position: relative;
+// }
+// .heading::before {
+//   content: "X";
+//   position: absolute;
+//   left: -2rem;
+//   color: red;
+// }
+// .heading::after {
+//   content: "o";
+//   position: absolute;
+//   right: -2rem;
+//   color: red;
+// }
+// .player_status {
+//   border: 2px solid black;
+//   background-color: whitesmoke;
+//   border-radius: 1rem;
+//   padding: 0.5rem 3rem;
+//   font-size: 20px;
+// }
+// .current_player {
+//   color: red;
+//   font-weight: 600;
+//   font-size: 20px;
+//   gap: 1px;
+// }
+// // grid
+// .game {
+//   width: 100%;
+//   max-width: 20rem;
+//   aspect-ratio: 1/1;
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   border: 3px solid whitesmoke;
+//   border-radius: 50px;
+//   background: #e2d2e1;
+//   box-shadow: 10px 10px 50px #bebebe, -20px -20px 60px #ffffff;
+//   padding: 30px;
+// }
+// .box {
+//   width: 100%;
+//   aspect-ratio: 1/1;
+//   font-size: 2rem;
+//   @extend %center;
+//   cursor: pointer;
+//   border: 2px solid whitesmoke;
+//   border-radius: 10px;
+// }
+// .box:nth-child(2n) {
+//   border: 1px solid whitesmoke;
+// }
+// .reset-button {
+//   padding: 0.5rem 3rem;
+//   border-radius: 1rem;
+//   border: 2px solid whitesmoke;
+//   cursor: pointer;
+//   visibility: hidden;
+
+//   &:hover {
+//     outline: 2px solid;
+//     background-color: #e2d2e1;
+//   }
+//   &:hover {
+//     background-color: #548687;
+//     color: whitesmoke;
+//   }
+// }
+
 @use "variables" as v;
 @import "utils";
+
+// Global Reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
-// mixins
+
+// Mixins
 %center {
   display: grid;
   place-items: center;
 }
+
+// Body Styling
 body {
   font-family: v.$font;
-  // background-color: #548687;
+  background: linear-gradient(145deg, #ff9f80, #ff4f67); // Adding a vibrant gradient for the body
+  color: #333; // Darker text color for readability
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
-button,
-input {
-  font-family: inherit;
-  outline: none;
-}
-// Main
-main {
-  min-height: 100vh;
-  min-width: 100vw;
-  // background: white;
-  @extend %center;
-  background: linear-gradient(
-    68.6deg,
-    rgb(252, 165, 241) 1.8%,
-    rgb(181, 255, 255) 100.5%
-  );
-}
+// Heading Styling
 .heading {
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   position: relative;
+  font-size: 2rem;
+  color: black; // White text for contrast against the gradient background
+  text-align: center;
+  margin-bottom: 2rem;
 }
+
 .heading::before {
   content: "X";
   position: absolute;
-  left: -2rem;
-  color: red;
+  left: -3rem;
+  color:black; // Bright coral to make "X" stand out
+  font-size: 2rem;
 }
+
 .heading::after {
   content: "o";
   position: absolute;
-  right: -2rem;
-  color: red;
+  right: -3rem;
+  color: black; // Soft mint color for "O" to provide contrast
+  font-size: 2rem;
 }
+
+// Player Status
 .player_status {
-  border: 2px solid black;
-  background-color: whitesmoke;
-  border-radius: 1rem;
-  padding: 0.5rem 3rem;
-  font-size: 20px;
-}
-.current_player {
-  color: red;
+  border: 2px solid #a1d6d4; // Soft mint border for clarity
+  background-color: #f1f1f1; // Light background for player status
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  font-size: 20px;
-  gap: 1px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
 }
-// grid
+
+// Current Player Styling
+.current_player {
+  color: #ff6b6b; // Bright coral to emphasize current player
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+// Game Grid
 .game {
   width: 100%;
-  max-width: 20rem;
+  max-width: 25rem;
   aspect-ratio: 1/1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 3px solid whitesmoke;
-  border-radius: 50px;
-  background: #e2d2e1;
-  box-shadow: 10px 10px 50px #bebebe, -20px -20px 60px #ffffff;
-  padding: 30px;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  background: #3d3d3d; // Darker background for the game grid to contrast the light boxes
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 -4px 10px rgba(255, 255, 255, 0.1);
+  padding: 2rem;
 }
+
 .box {
   width: 100%;
   aspect-ratio: 1/1;
-  font-size: 2rem;
+  font-size: 2.5rem;
   @extend %center;
   cursor: pointer;
-  border: 2px solid whitesmoke;
-  border-radius: 10px;
-}
-.box:nth-child(2n) {
-  border: 1px solid whitesmoke;
-}
-.reset-button {
-  padding: 0.5rem 3rem;
+  border: 2px solid #ff6b6b; // Bright coral border for visibility
   border-radius: 1rem;
-  border: 2px solid whitesmoke;
-  cursor: pointer;
-  visibility: hidden;
+  background: #f9f9f9; // Light background for the boxes
+  color: #333;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
 
-  &:hover {
-    outline: 2px solid;
-    background-color: #e2d2e1;
+.box:nth-child(odd) {
+  background: #ffffff; // Alternating box colors for better distinction
+}
+
+.box:hover {
+  background-color: #ff6b6b; // Box turns bright coral on hover
+  color: white;
+  transform: scale(1.05);
+}
+
+.box:active {
+  background-color: #e84a4a; // Slightly darker coral when clicked
+  transform: scale(0.98);
+}
+
+// Reset Button Styling
+.reset-button {
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid #ff6b6b; // Bright coral border for reset button
+  cursor: pointer;
+  background-color: #3d3d3d; // Bright coral for the reset button background
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  visibility: hidden;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  position: relative;
+  top:2rem;
+  left: 2.5rem;
+
+}
+
+.reset-button:hover {
+  background-color: white; // Darker coral on hover
+  transform: scale(1.05);
+  color: black;
+}
+
+.reset-button.show {
+  visibility: visible;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .game {
+    max-width: 20rem;
+    padding: 1rem;
   }
-  &:hover {
-    background-color: #548687;
-    color: whitesmoke;
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .player_status {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .box {
+    font-size: 2rem;
+  }
+
+  .reset-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
   }
 }
